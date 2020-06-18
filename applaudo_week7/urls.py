@@ -21,5 +21,5 @@ from applaudo_week7.settings import BASE_API_URI
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(BASE_API_URI, include('movies.urls')),
-
+    path(BASE_API_URI + 'auth/', include('accounts.urls'))
 ]

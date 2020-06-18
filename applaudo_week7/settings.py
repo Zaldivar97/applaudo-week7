@@ -12,14 +12,14 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
+
+from .rest_settings import *
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'orxbvfei+hj-wpml8$y1xgbea(&6t!@4z7kbu(!7$3+yvp0i@k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -36,21 +36,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'movies',
+    'accounts',
     'rest_framework',
 ]
 
-REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.SessionAuthentication',
-    ),
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
-    )
-}
-
-BASE_API_URI = 'api/v1/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
