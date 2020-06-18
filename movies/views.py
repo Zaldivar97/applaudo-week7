@@ -13,9 +13,9 @@ class MoviesListView(generics.ListCreateAPIView):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
 
-    def dispatch(self, request, *args, **kwargs):
-        print('[USER]: ', self.request.user)
-        return super().dispatch(request, *args, **kwargs)
+    # def dispatch(self, request, *args, **kwargs):
+    #     print('[USER]: ', self.request.user)
+    #     return super().dispatch(request, *args, **kwargs)
 
     def get_queryset(self, *args, **kwargs):
         q = self.request.query_params.get('q', None)
